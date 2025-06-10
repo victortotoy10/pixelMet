@@ -1,4 +1,5 @@
 /* Importa una fuente personalizada desde Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
 /* Estilos generales para el cuerpo de la página */
 body {
@@ -17,10 +18,11 @@ body {
 
 /* Estilos para el contenedor principal del formulario */
 .form-container {
-  width: 500px; /* Ancho fijo del contenedor */
+  width: 400px; /* Ancho fijo del contenedor */
+ /* Altura fija del contenedor, puedes ajustar este valor */
   background-color: white;
   border-radius: 10px;
-  padding: 50px;
+  padding: 30px;
 }
 
 form {
@@ -63,4 +65,15 @@ button {
   width: 1px;
   height: 1px;
   overflow: hidden;
+}
+
+/* Solo el título usa la fuente pixelada */
+.pixelmet-titulo {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 48px;
+  color: #000000;
+  text-align: center;
+  letter-spacing: 2px;
+  margin-bottom: 24px;
+  text-shadow: 2px 2px 0 #222, 4px 4px 0 #fff;
 }

@@ -1,27 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Iniciar sesión</title>
-  <link rel ="stylesheet" href="style.css">
-  <script src="login.js" defer></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Iniciar Sesión - PixelMet</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
 </head>
 <body>
-  <main>
-    <div class="form-container">
-      <h1 class="pixelmet-titulo">PixelMet</h1>
-      <p>Ingresa tus credenciales
-        <form id="login-form">
-          <label for="user" class="sr-only">User</label>
-          <input type="text" name="user" id="user" placeholder="Nombre de usuario">  
-          <label for="password"class="sr-only">Password</label>
-          <input type="password" name="password" id="password" placeholder="Contraseña">  
-          <button type="submit">Iniciar sesión</button>
-          <p class="error escondido">Error al iniciar sesion</p>
-        </form>
-      </p>¿Todavia no tienes una cuenta? - <a href="/register">Registrate</a>
+    <div class="card">
+        <div class="form-header">
+            <h1>Iniciar Sesión PixelMet</h1>
+            <p>Ingresa tus credenciales para acceder</p>
+        </div>
+
+        <div class="accordion-item" id="sectionRolLogin">
+            <div class="accordion-header">
+                <div class="header-text">Tu Rol</div>
+                <span class="status-label" data-status></span>
+                <span class="material-icons arrow">chevron_right</span>
+            </div>
+            <div class="accordion-content">
+                <p>Selecciona tu rol:</p>
+                <div class="role-selector">
+                    <div class="role-option" data-role="estudiante">Estudiante</div>
+                    <div class="role-option" data-role="profesor">Profesor</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item" id="sectionCredencialesLogin">
+            <div class="accordion-header">
+                <div class="header-text">Credenciales de Acceso</div>
+                <span class="status-label" data-status></span>
+                <span class="material-icons arrow">chevron_right</span>
+            </div>
+            <div class="accordion-content">
+                <div class="form-row">
+                    <label for="loginEmail">Email</label>
+                    <input id="loginEmail" type="email" placeholder="ejemplo@correo.com" />
+                </div>
+                <div class="form-row">
+                    <label for="loginPassword">Contraseña</label>
+                    <input id="loginPassword" type="password" placeholder="Tu contraseña" />
+                </div>
+            </div>
+        </div>
+
+        <div class="actions">
+            <button id="registerButton">Registrar</button>
+            <button id="loginAccessButton">Acceder</button> 
+        </div>
+        
     </div>
-  </main>
+
+    <div id="modal-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: transparent; z-index: 999;"></div>
+    <div id="teclado-virtual" style="display: none; position: absolute; z-index: 1000;"></div>
+    <div id="validation-message" class="validation-message"></div>
+
+    <script src="global-input-blocker.js"></script>
+    <script src="utils.js"></script>
+    <script src="joystick.js"></script>
+    <script src="teclado.js"></script>
+    <script src="login.js"></script>
 </body>
 </html>
